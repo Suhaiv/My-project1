@@ -1,0 +1,83 @@
+
+    /*  -- main part */
+    @media only screen and (min-width:576px) and (max-width:991px){
+        /* navbar */
+              nav ul {
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        flex-direction: column;
+        background: #333;
+        width: 100%;
+        transition: 0.3s;
+      }
+
+      nav ul.show {
+        left: 0;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul li ul {
+        position: static;
+      }
+
+      nav ul li:hover ul {
+        display: none; /* Disable hover on mobile */
+      }
+
+      nav ul li.active ul {
+        display: flex; /* Open dropdown on click */
+      }
+         .menu-toggle {
+        display: flex;
+      }
+    }
+    /* services section */
+        .service-1{
+            margin: 20px;
+        }
+ 
+    
+    @media only screen and (min-width:200px) and (max-width:575px){
+        /* navbar */
+              nav ul {
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        flex-direction: column;
+        background: #333;
+        width: 100%;
+        transition: 0.3s;
+      }
+
+      nav ul.show {
+        left: 0;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul li ul {
+        position: static;
+      }
+
+      nav ul li:hover ul {
+        display: none; /* Disable hover on mobile */
+      }
+
+      nav ul li.active ul {
+        display: flex; /* Open dropdown on click */
+      }
+         .menu-toggle {
+        display: flex;
+      }
+    /* services section */
+        .service-1{
+            margin: 10px;
+        }
+    }
+    
