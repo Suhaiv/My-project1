@@ -1,0 +1,214 @@
+     * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: Arial, sans-serif;
+     }
+
+
+
+     /* Navbar styles */
+     nav {
+         background: #131313;
+         color: #fff;
+         padding: 22px 20px;
+         height: 90px;
+     }
+
+     nav .logo {
+         font-size: 20px;
+         font-weight: bold;
+     }
+
+     nav ul {
+         list-style: none;
+         display: flex;
+         align-items: center;
+     }
+
+     nav ul li {
+         position: relative;
+     }
+
+     nav ul li a {
+         text-decoration: none;
+         color: #fff;
+         padding: 10px 15px;
+         display: block;
+         font-size: 20px;
+     }
+
+     nav ul li a:hover {
+         color: blue;
+     }
+
+     /* Dropdown menu */
+     nav ul li ul {
+         position: absolute;
+         top: 100%;
+         left: 0;
+         background: #444;
+         display: none;
+         flex-direction: column;
+         min-width: 150px;
+     }
+
+     nav ul li:hover ul {
+         display: block;
+     }
+
+     /* Navbar container */
+     .navbar {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+     }
+
+     /* Hamburger */
+     .menu-toggle {
+         display: none;
+         flex-direction: column;
+         cursor: pointer;
+     }
+
+     .menu-toggle div {
+         width: 25px;
+         height: 3px;
+         background: white;
+         margin: 4px 0;
+     }
+
+/* --- main part--- */
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+    /* Banner */
+    .banner {
+      background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e') no-repeat center center/cover;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    /* Contact Section */
+    .contact-container {
+      max-width: 1100px;
+      margin: -50px auto 40px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    .contact-info h2, 
+    .contact-form h2 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+    .contact-info p {
+      margin: 10px 0;
+      color: #555;
+      font-size: 16px;
+    }
+    /* Form */
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-form input, 
+    .contact-form textarea, 
+    .contact-form select {
+      margin-bottom: 15px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+    .contact-form button {
+      background: #0073e6;
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .contact-form button:hover {
+      background: #005bb5;
+    }
+    @media (max-width: 768px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+        margin: 20px;
+      }
+      .banner {
+        font-size: 24px;
+        padding: 20px;
+      }
+    }
+    /*--- footer--- */
+       footer {
+      background: #111827;
+      color: #fff;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+    footer h3 {
+      margin-bottom: 15px;
+      font-size: 18px;
+      border-bottom: 2px solid #e63946;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    footer p {
+      font-size: 14px;
+      line-height: 22px;
+      color: #ccc;
+    }
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    footer ul li {
+      margin: 8px 0;
+    }
+    footer ul li a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+    footer ul li a:hover {
+      color: #fff;
+    }
+    .social-icons a {
+      display: inline-block;
+      margin: 0 8px;
+      color: #ccc;
+      font-size: 18px;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding: 15px;
+      background: #0f172a;
+      font-size: 13px;
+      color: #999;
+    }
