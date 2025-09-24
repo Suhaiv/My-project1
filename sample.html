@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Responsive 8-image grid</title>
+<style>
+  :root{
+    --gap: 16px;
+    --radius: 12px;
+    --box-bg: #f7f8fb;
+    --shadow: 0 6px 18px rgba(13,20,30,0.06);
+    --transition: 200ms ease;
+  }
+
+  body{
+    margin: 24px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: #fff;
+    color: #111;
+  }
+
+  .gallery {
+    display: grid;
+    gap: var(--gap);
+    /* default: 4 columns on wide screens */
+    grid-template-columns: repeat(4, 1fr);
+    align-items: stretch;
+  }
+
+  /* breakpoints: adjust number of columns */
+  @media (max-width: 1100px){
+    .gallery { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 700px){
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 420px){
+    .gallery { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    background: var(--box-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: block;
+    text-decoration: none;
+    transition: transform var(--transition), box-shadow var(--transition);
+    will-change: transform;
+  }
+
+  /* keep each card square */
+  .card::before{
+    content: "";
+    display: block;
+    padding-top: 100%; /* fallback for older browsers */
+  }
+  /* modern way: aspect-ratio (preferred) */
+  .media {
+    position: relative;
+    aspect-ratio: 1 / 1; /* maintains square */
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(180deg, #eef1f6, #f7f8fb);
+  }
+
+  .media img{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* important for consistent crop */
+    display: block;
+  }
+
+  .card:hover{
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 12px 30px rgba(13,20,30,0.12);
+  }
+
+  /* optional caption below image */
+  .caption {
+    padding: 10px 12px;
+    font-size: 14px;
+    color: #333;
+    background: white;
+    border-top: 1px solid rgba(0,0,0,0.04);
+  }
+
+  /* accessible focus style */
+  .card:focus-visible {
+    outline: 3px solid #cfe8ff;
+    outline-offset: 4px;
+  }
+</style>
+</head>
+<body>
+
+    <h1>Responsive 8-image grid</h1>
+    <p>Resize the browser to see layout change (4 → 3 → 2 → 1 column).</p>
+
+    <div class="gallery" aria-label="Image gallery">
+    <!-- Repeat for 8 images. Replace src with your image URLs. -->
+    <a class="card" href="#" aria-label="Image 1">
+        <div class="media">
+        <img src="https://picsum.photos/id/1015/800/800" alt="Image 1 description" loading="lazy">
+        </div>
+        <div class="caption">Image 1</div>
+    </a>
+
+    <a class="card" href="#" aria-label="Image 2">
+        <div class="media">
+        <img src="https://picsum.photos/id/1016/800/800" alt="Image 2 description" loading="lazy">
+        </div>
+        <div class="caption">Image 2</div>
+    </a>
+
+    <a class="card" href="#" aria-label="Image 3">
+        <div class="media">
+        <img src="https://picsum.photos/id/1018/800/800" alt="Image 3 description" loading="lazy">
+        </div>
+        <div class="caption">Image 3</div>
+    </a>
+
+    <a class="card" href="#" aria-label="Image 4">
+        <div class="media">
+        <img src="https://picsum.photos/id/1020/800/800" alt="Image 4 description" loading="lazy">
+        </div>
+        <div class="caption">Image 4</div>
+    </a>
+
+    <a class="card" href="#" aria-label="Image 5">
+        <div class="media">
+        <img src="https://picsum.photos/id/1024/800/800" alt="Image 5 description" loading="lazy">
+        </div>
+        <div class="caption">Image 5</div>
+    </a>
+
+    <a class="card" href="#" aria-label="Image 6">
+        <div class="media">
+        <img src="https://picsum.photos/id/1025/800/800" alt="Image 6 description" loading="lazy">
+        </div>
+        <div class="caption">Image 6</div>
+    </a>
+
+    <a class="card" href="#" aria-label="Image 7">
+        <div class="media">
+        <img src="https://picsum.photos/id/1035/800/800" alt="Image 7 description" loading="lazy">
+        </div>
+        <div class="caption">Image 7</div>
+    </a>
+
+    <a class="card" href="#" aria-label="Image 8">
+        <div class="media">
+        <img src="https://picsum.photos/id/1038/800/800" alt="Image 8 description" loading="lazy">
+        </div>
+        <div class="caption">Image 8</div>
+    </a>
+    </div>
+
+</body>
+</html>
