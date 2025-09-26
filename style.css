@@ -242,11 +242,11 @@
         justify-content: space-evenly;
      }
      .box1{
-        background: rgb(243, 243, 243);
+        background: rgb(252, 252, 252);
         width: 300px;
         height: 400px;
          border-radius: 12px 12px 0 0;
-         box-shadow: 0 3px 8px rgba(71, 71, 71, 0.829); 
+         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.829); 
      }
      .box1 a{
         text-decoration: none;  
@@ -256,6 +256,7 @@
          margin: 3px 0 5px 20px;
          font-style: italic;
          font-weight: 30;
+         color: blue;
      }
      .box1 img{
         width: 100%;
