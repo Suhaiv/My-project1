@@ -108,12 +108,14 @@
       align-items: flex-start;
     }
     .content img {
-      width: 50%;
+      width: 40%;
       border: 1px solid #ccc;
       border-radius: 5px;
+      height: 400px;
     }
     .details {
       width: 50%;
+      margin-left: 50px;
     }
     .details h2 {
       font-size: 20px;
