@@ -42,20 +42,7 @@
          color: blue;
      }
 
-     /* Dropdown menu */
-     nav ul li ul {
-         position: absolute;
-         top: 100%;
-         left: 0;
-         background: #444;
-         display: none;
-         flex-direction: column;
-         min-width: 150px;
-     }
-
-     nav ul li:hover ul {
-         display: block;
-     }
+ 
 
      /* Navbar container */
      .navbar {
@@ -109,6 +96,7 @@
     }
     .content img {
       width: 50%;
+      height: 500px;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
