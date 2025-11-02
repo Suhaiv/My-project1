@@ -3,7 +3,9 @@
          padding: 0;
          box-sizing: border-box;
          font-family: Arial, sans-serif;
+        
      }
+
 
 
 
@@ -13,6 +15,7 @@
          color: #fff;
          padding: 22px 20px;
          height: 90px;
+         width: 100%;
      }
 
      nav .logo {
@@ -74,13 +77,13 @@
      .menu-toggle div {
          width: 25px;
          height: 3px;
-         background: white;
+         background: rgb(255, 255, 255);
          margin: 4px 0;
      }
 
      /* main part */
      .main {
-         background: white;
+         background: rgb(255, 255, 255);
          font-family: sans-serif;
      }
 

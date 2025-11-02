@@ -81,7 +81,7 @@
       }
       .banner-head{
         width: 100%;
-        font-size: 20px;
+        font-size: 15px;
       }
       .banner-p{
         width: 100%;
@@ -116,14 +116,14 @@ margin: 0;
         margin: 15px;
       } 
       .member img{
-        width: 500px;
+        width: 450px;
       }
       .selection-title1 h2{
         font-size: 35px;
         margin-top: 10px;
       }
     .box1{
-      width: 500px;
+      width: 450px;
       margin: 20px;
     }
     /* services section */
