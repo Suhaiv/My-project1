@@ -75,9 +75,67 @@
          .menu-toggle {
         display: flex;
       }
+      .banner{
+        width: 100%;
+        padding: 50px;
+      }
+      .banner-head{
+        width: 100%;
+        font-size: 20px;
+      }
+      .banner-p{
+        width: 100%;
+      }
+      .btn4{
+margin: 0;
+      }
+      .btn3{
+        margin: 0;
+      }
+      .service-1 {
+        width: 75%;
+      }
+      .selection-title h2{
+        font-size: 45px;
+      }
+      .about-img{
+        width: 100%;
+        height: 300px;
+      }
+      .about-p{
+         width: 100%;
+         margin-top: 250px;
+        margin-right: 15px;
+      }
+      .row{
+        display: flex;
+        justify-content: center;
+      }
+      .member{
+        width: 500px;
+        margin: 15px;
+      } 
+      .member img{
+        width: 500px;
+      }
+      .selection-title1 h2{
+        font-size: 35px;
+        margin-top: 10px;
+      }
+    .box1{
+      width: 500px;
+      margin: 20px;
+    }
     /* services section */
         .service-1{
             margin: 10px;
         }
+        .testimonials{
+          display: flex;
+          flex-wrap: wrap;
+        }
+         .testimonial{
+          width: 300px;
+         }
     }
     

@@ -86,7 +86,7 @@
 
      .banner {
          height: 450px;
-         width: 100%;
+         width: auto;
          padding: 30px 600px 30px 20px;
          background: #020024;
          background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
@@ -234,6 +234,7 @@
      /* -- about --- */
      .about {
          display: flex;
+         flex-wrap: wrap;
          text-align: center;
      }
 
@@ -261,6 +262,21 @@
 
 
      /* --- OUR SERVICES --- */
+          .selection-title1 {
+         display: flex;
+         justify-content: center;
+         height: 100px;
+         padding-top: 10px;
+         background-color: rgba(224, 224, 224, 0.308);
+     }
+
+     .selection-title1 h2 {
+         padding: 5px;
+         font-size: 50px;
+         color: red;
+         font-family: cursive;
+
+     }
      .metal-services {
          text-align: center;
          margin: 40px;
