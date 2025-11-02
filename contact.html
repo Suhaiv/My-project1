@@ -54,10 +54,10 @@
     <!-- Form -->
     <div class="contact-form">
       <h2>Send Us a Message</h2>
-      <form>
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-        <input type="email" name="email" placeholder="Email Address" required>
+      <form id="contactForm">
+        <input type="text" id="name" name="name" placeholder="Full Name" required>
+        <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
         <select name="service">
           <option value="">Select Service</option>
           <option>New Metal Services</option>
@@ -70,7 +70,7 @@
           <option>Aluminum Services</option>
           <option>Sheds Making/Reparing</option>
         </select>
-        <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
     </div>
@@ -126,6 +126,8 @@
   <div class="footer-bottom">
     © 2025 New Bharat Metal & Interior. All Rights Reserved.
   </div>
+ 
+
 </body>
 
 </html>
