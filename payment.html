@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Payment | New Bharat Metal & Interior</title>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      text-align: center;
+      padding-top: 80px;
+    }
+    h2 {
+      color: #333;
+    }
+    button {
+      background-color: #3399cc;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #287aa8;
+    }
+  </style>
+</head>
+<body>
+  <h2>New Bharat Metal & Interior</h2>
+  <p>Test Payment Gateway Integration (Razorpay)</p>
+  <button id="payBtn">Pay ₹500</button>
+
+  <script>
+    document.getElementById('payBtn').onclick = function(e) {
+      var options = {
+        "key": "rzp_test_RbV7FmvSVfNJAc", // ← yahan apni Test Key ID lagao
+        "amount": 50000, // amount in paise (₹500 = 50000 paise)
+        "currency": "INR",
+        "name": "New Bharat Metal & Interior",
+        "description": "Test Transaction",
+        "image": "https://razorpay.com/favicon.png",
+        "handler": function (response) {
+          alert("✅ Payment Successful!\nPayment ID: " + response.razorpay_payment_id);
+        },
+        "prefill": {
+          "name": "Test User",
+          "email": "test@example.com",
+          "contact": "9999999999"
+        },
+        "theme": {
+          "color": "#3399cc"
+        }
+      };
+      var rzp1 = new Razorpay(options);
+      rzp1.open();
+      e.preventDefault();
+    }
+  </script>
+</body>
+</html>
