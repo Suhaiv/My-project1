@@ -127,8 +127,57 @@
   <div class="footer-bottom">
     © 2025 New Bharat Metal & Interior. All Rights Reserved.
   </div>
- 
-<script src="script.js"></script>
+ <!-- Firebase App (core SDK) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+
+<!-- Realtime Database -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"></script>
+
+<script src="script.js">
+  // Firebase setup
+const firebaseConfig = {
+  apiKey: "AIzaSyXXXX...",
+  authDomain: "new-bharat-metal-inquiry.firebaseapp.com",
+  databaseURL: "https://new-bharat-metal-inquiry-default-rtdb.firebaseio.com",
+  projectId: "new-bharat-metal-inquiry",
+  storageBucket: "new-bharat-metal-inquiry.appspot.com",
+  messagingSenderId: "XXXXXXXXXXXX",
+  appId: "1:XXXXXXXXXXXX:web:XXXXXXXXXXXX"
+};
+
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+const contactForm = document.getElementById("contactForm");
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  firebase.database().ref("inquiries").push({
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    email: document.getElementById("email").value,
+    service: document.querySelector("select").value,
+    message: document.querySelector("textarea").value
+  });
+
+  alert("Your message has been sent!");
+  contactForm.reset();
+});
+  // Initialize Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  // Example: Send data to Firebase
+  function sendData() {
+    db.ref("inquiry").push({
+      name: "Suhaiv Saifi",
+      message: "Hello Firebase!"
+    });
+    alert("Data sent successfully!");
+  }
+</script>
+
 </body>
 
 </html>
