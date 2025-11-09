@@ -105,12 +105,15 @@
          font-size: 50px;
          color: red;
          font-family: cursive;
+         text-align: center;
+        
 
      }
 
   
 
      /* --- OUR SERVICES --- */
+     
      .metal-services {
          text-align: center;
          margin: 40px;
@@ -128,6 +131,7 @@
 
      .services {
          display: flex;
+         flex-wrap: wrap;
          justify-content: space-evenly;
 
      }
