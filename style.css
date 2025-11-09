@@ -246,21 +246,21 @@
      }
 
      .about-p {
-         margin: 40px 0 40px 40px;
+    margin-top: 60px;
          line-height: 40px;
          font-size: 25px;
-         width: 50%;
+         width: 55%;
      }
 
      .about-img {
-         width: 50%;
+         width: 40%;
 
      }
 
      .about-img img {
          width: 80%;
          border-radius: 12px;
-         margin: 60px;
+         margin: 60px 0;
      }
 
 

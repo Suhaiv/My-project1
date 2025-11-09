@@ -7,6 +7,8 @@
   <title>Contact Us | New Bharat Metal and Interior Work</title>
   <link rel="stylesheet" href="contact.css">
    <link rel="stylesheet" href="media.css">
+   
+
 </head>
 
 <body>
@@ -59,7 +61,7 @@
         <input type="text" id="name" name="name" placeholder="Full Name" required>
         <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
         <input type="email" id="email" name="email" placeholder="Email Address" required>
-        <select name="service">
+        <select name="service" id="services">
           <option value="">Select Service</option>
           <option>New Metal Services</option>
           <option>Old Metal Repairing</option>
@@ -72,7 +74,10 @@
           <option>Sheds Making/Reparing</option>
         </select>
         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
+       <div class="btn">
+         <button type="submit" id="submitSignUp">Send Message</button>
+       <a href="payment.html"> <button type="button">Pay Now</button></a>
+       </div>
       </form>
     </div>
   </section>
@@ -127,6 +132,63 @@
   <div class="footer-bottom">
     © 2025 New Bharat Metal & Interior. All Rights Reserved.
   </div>
+<script src="script.js"></script>
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyD0e8VvLpbA9fniol4V-Poabhm1QwiKelw",
+    authDomain: "new-bharat-metal-and-interrior.firebaseapp.com",
+    projectId: "new-bharat-metal-and-interrior",
+    storageBucket: "new-bharat-metal-and-interrior.firebasestorage.app",
+    messagingSenderId: "813032932791",
+    appId: "1:813032932791:web:716e2052673ecc26305432"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  const contactForm = document.getElementById('contactForm');
+
+contactForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  // read values
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const service = document.getElementById('services').value;
+  const message = contactForm.querySelector('textarea[name="message"]').value.trim();
+
+  // basic validation
+  if (!name || !phone || !email || !message) {
+    alert('Please fill all required fields.');
+    return;
+  }
+
+  try {
+    // save to Firestore collection 'contacts'
+    await db.collection('contacts').add({
+      name,
+      phone,
+      email,
+      service,
+      message,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp()
+    });
+
+    alert('Message sent. Thank you!');
+    contactForm.reset();
+  } catch (err) {
+    console.error('Error writing document: ', err);
+    alert('Error sending message. Please try again later.');
+  }
+});
+
+</script>
+
 <script src="script.js"></script>
 
 
