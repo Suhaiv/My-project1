@@ -126,6 +126,12 @@ margin: 0;
       width: 450px;
       margin: 20px;
     }
+    .content img {
+      width: 100%;
+    }
+    .details {
+      width: 100%;
+    }
     /* services section */
         .service-1{
             margin: 10px;
