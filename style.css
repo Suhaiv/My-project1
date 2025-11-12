@@ -301,7 +301,9 @@
          flex-wrap: wrap;
 
      }
-
+     .services a{
+        text-decoration: none;
+     }
      .box1 {
          background: rgb(252, 252, 252);
          width: 300px;
