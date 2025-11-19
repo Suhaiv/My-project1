@@ -1,67 +1,28 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Razorpay Demo</title>
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-  <style>
-    body { font-family: Arial, sans-serif; background:#f9f9f9; text-align:center; padding-top:60px; }
-    button { background:#3399cc; color:#fff; border:none; padding:12px 20px; border-radius:8px; cursor:pointer; }
-  </style>
-</head>
-<body>
-  <h2>New Bharat Metal & Interior</h2>
-  <p>Click to pay ₹500 (test)</p>
-  <button id="payBtn">Pay ₹500</button>
-
-  <script>
-    document.getElementById('payBtn').onclick = async function (e) {
-      e.preventDefault();
-
-      // 1) Ask server to create order
-      const createResp = await fetch('/create-order', { method: 'POST' });
-      const order = await createResp.json();
-      if (!order || !order.id) return alert('Order creation failed');
-
-      const options = {
-        key: "rzp_test_RfHV8ZiSJaWdqh", // <-- Replace with rzp_live_xxx for production
-        order_id: order.id,
-        amount: order.amount,
-        currency: order.currency,
-        name: "New Bharat Metal & Interior",
-        description: "Order - " + order.receipt,
-        prefill: {
-          name: "Suhaiv Saifi",
-          email: "Suhaivsaifi8923@gmail.com",
-          contact: "8923570044"
-        },
-        theme: { color: "#3399cc" },
-        handler: function (response) {
-          // 2) Send payment details to server for verification
-          fetch('/verify-payment', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(response)
-          }).then(r => r.json()).then(data => {
-            if (data.verified) {
-              alert("✅ Payment verified! Payment ID: " + response.razorpay_payment_id);
-            } else {
-              alert("⚠️ Verification failed: " + (data.error || 'unknown'));
-            }
-          }).catch(err => {
-            console.error('Verify error', err);
-            alert('Server verify error');
-          });
-        },
-        modal: {
-          ondismiss: function() { console.log('Checkout closed'); }
-        }
-      };
-
-      const rzp = new Razorpay(options);
-      rzp.open();
-    };
-  </script>
-</body>
-</html>
+<html>
+<head><meta charset="utf-8"><title>Pay Demo</title>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head><body>
+<h2>Buy ₹99</h2>
+<button id="payBtn">Pay ₹99</button>
+<script>
+document.getElementById('payBtn').addEventListener('click', async () => {
+  const resp = await fetch('/create-order', { method: 'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ amount: 99 })});
+  const order = await resp.json();
+  const options = {
+    key: 'rzp_test_RfHV8ZiSJaWdqh', // public Key ID (test)
+    amount: order.amount,
+    currency: order.currency,
+    name: 'Demo Shop',
+    order_id: order.id,
+    handler: async function(response) {
+      const verify = await fetch('/verify-payment', { method: 'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(response) });
+      const result = await verify.json();
+      alert(result.ok ? 'Payment verified' : 'Verification failed');
+    },
+    prefill: { name:'Test', email:'test@example.com' }
+  };
+  const rzp = new Razorpay(options); rzp.open();
+});
+</script>
+</body></html>
